@@ -1,0 +1,21 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+chapters:
+- file: rse-community-challenges/best-practice-software-development
+- file: rse-community-challenges/careers
+- file: rse-community-challenges/community
+- file: rse-community-challenges/funding/funding
+  sections:
+  - file: rse-community-challenges/funding/funding-output-maintainance
+- file: rse-community-challenges/green-rse
+- file: rse-community-challenges/equality-diversity-inclusion-accessibility
+- file: rse-community-challenges/isolation
+- file: rse-community-challenges/maintaining-legacy-code
+- file: rse-community-challenges/mental-health
+- file: rse-community-challenges/project-management
+- file: rse-community-challenges/recognition
+- file: rse-community-challenges/recruitment-to-rse
+- file: rse-community-challenges/training
