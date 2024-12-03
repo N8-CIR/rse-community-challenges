@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Challenge(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -16,7 +17,7 @@ class Challenge(models.Model):
 
 
 class Resource(models.Model):
-    challenge=models.ForeignKey(Challenge, on_delete=models.CASCADE)
+    challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     url = models.URLField()
     description = models.TextField()
