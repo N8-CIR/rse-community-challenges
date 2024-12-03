@@ -1,0 +1,54 @@
+<div class="row">{% include 'challenge_nav.html' %}</div>
+<div class="row">
+  <div class="container-fluid" id="challenge_content">
+    <div class="row">
+      <div class="col-3 bg-primary gx-0">
+        <div class="container">
+          <h3>Contribute</h3>
+          <div class="list-group">
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Evidence</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Impacts</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Objectives</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Actions and Outputs</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Active Projects</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Past Work</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://github.com/N8-CIR/rse-community-challenges/issues/new"
+              >Add Resources</a
+            >
+            <p class="mt-1"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mt-2">
+        {% block challengecontent %} {% endblock challengecontent %}
+      </div>
+    </div>
+  </div>
+</div>

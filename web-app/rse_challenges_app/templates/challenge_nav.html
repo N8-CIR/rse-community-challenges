@@ -1,0 +1,145 @@
+<nav class="navbar navbar-expand-lg bg-primary gy-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Challenge: </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item {% if nav == 'description' %}active{% endif %}">
+          <button
+            class="nav-link {% if nav == 'description' %}active{% endif %}"
+            hx-get="{% url 'challenge_component' challenge.id 'description' %}"
+            hx-target="#challenge_content_outer"
+          >
+            About
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link {% if nav == 'evidence' %}active{% endif %}"
+            hx-get="{% url 'challenge_component' challenge.id 'evidence' %}"
+            hx-target="#challenge_content_outer"
+          >
+            Evidence
+          </button>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle {% if nav == 'impacts' %}active{% endif %}"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Theory of Change
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'impacts' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'impacts' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Impact
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'objectives' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'objectives' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Objectives
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'actions_and_outputs' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'actions_and_outputs' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Actions and Outputs
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Activities
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'active_projects' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'active_projects' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Projects and Initiatives
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'past_work' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'past_work' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Past work
+              </button>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Resources
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'resources' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'resources' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Useful links
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <!-- <button class="btn" type="submit">Search</button> -->
+      </form>
+    </div>
+  </div>
+</nav>

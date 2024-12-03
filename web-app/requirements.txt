@@ -1,0 +1,6 @@
+django
+whitenoise
+libsass
+django-compressor
+django-sass-processor
+markdown

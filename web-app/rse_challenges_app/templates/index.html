@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!--  -->
+{% load static %}
+<!--  -->
+{% block title %}Home{% endblock title %}
+<!--  -->
+{% block header %}
+<!--  -->
+{% include 'header.html' %}
+<!--  -->
+{% endblock header %} {% block content %}
+
+<div class="container text-center">
+  <h1 class="text-center">RSE Challenges</h1>
+  <div list="list-group border border-primary">
+    {% for challenge in challenges %}
+    <a
+      class="list-group-item list-group-item-action  border border-primary mb-2 bg-secondary text-white"
+      href="{% url 'challenge' challenge.id %}"
+      >{{ challenge.name }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

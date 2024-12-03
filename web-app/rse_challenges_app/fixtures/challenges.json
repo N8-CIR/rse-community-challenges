@@ -1,0 +1,262 @@
+[
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 1,
+    "fields": {
+      "name": "Recognition",
+      "description": "RSEs often struggle to get recognition for their work. This can be due to a lack of understanding of the role of RSEs, or a lack of visibility of their contributions. RSEs may also find it difficult to get credit for their work, as they are often not listed as authors on academic papers.\nThere needs to be recognition of the different kinds of roles that RSEs play in research, and the importance of their work in enabling research to be carried out. RSEs should be recognised as key contributors to research, and their work should be valued and rewarded accordingly.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "[from-backstage-to-spotlight-a-call-to-highlight-the-critical-role-of-research-software](https://blogs.lse.ac.uk/impactofsocialsciences/2023/09/07/from-backstage-to-spotlight-a-call-to-highlight-the-critical-role-of-research-software/)\n[Research technology professionals: the hidden roles behind research success](https://www.ses.ac.uk/research-technology-professionals-the-hidden-roles-behind-research-success/)",
+      "impacts_text": "Non standard research outputs inc. software produced by RSEs to be recognised as academic output.",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "[Hidden-ref](https://hidden-ref.org/) - A project to help RSEs get credit for their work by providing a platform for them to showcase their contributions. Status: Active",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 2,
+    "fields": {
+      "name": "Mental Health",
+      "description": "RSEs may experience high levels of stress and anxiety due to the demands of their work. This can have a negative impact on their mental health and well-being.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "[Talking about mental health at RSECon22](https://www.software.ac.uk/blog/talking-about-mental-health-rsecon22)",
+      "impacts_text": "PLACEHOLDER",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 3,
+    "fields": {
+      "name": "Recruitment to RSE",
+      "description": "RSEs may find it difficult to attract new talent to the field, as the role of RSE is not always well-understood or recognised. This can make it difficult to recruit new staff or to build a diverse team.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "PLACEHOLDER",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "[RSE Leaders Evidence Bank](https://github.com/RSE-leaders/evidence-bank) - This repository contains useful information and resources for people or organisations wishing to set up their own Research Software Engineering (RSE) group.",
+      "past_work_text": "[N8CIR Intenship Scheme 2024](https://n8cir.org.uk/themes/epsrc-internships/) - We have received funding from EPSRC to support internships and increase interaction with the Bede Supercomputer within the N8 CIR community."
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 4,
+    "fields": {
+      "name": "Training",
+      "description": "RSEs may struggle to identify the most appropriate training opportunities for their role. This links to the ambiguity of the RSE role and the lack of a clear career path. This can also result in issues of skills shortages.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "PLACEHOLDER",
+      "objectives_text": "Identify the baseline skills required for RSEs at different levels of experience\nIdentify the most appropriate training opportunities for RSEs at different levels of experience",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "[RSE Competencies Toolkit](https://github.com/RSEToolkit/rse-competencies-toolkit/issues) - A project to define the competencies required for RSEs at different levels of experience, and to provide guidance on how to develop these competencies.",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 5,
+    "fields": {
+      "name": "Best Practice Software Development",
+      "description": "RSEs may struggle to implement best practices in software development, due to a lack of training or experience in this area. This can lead to issues with code quality, maintainability, and scalability. This is a particular challenge when working with researchers who may not have a background in software development.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "",
+      "objectives_text": "Understand the scale of the problem of best practices in research software development\nRSEs have the skills, knowledge and resources to implement best practices in research software development\nBest practice is shared and adopted across the RSE community",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['Establish RSE champions in key areas of software best practice', 'RSEs with the skills, knowleddge and resources to lead the community', '3', '1,2']])"
+      ],
+      "active_projects_text": "[The Carpentries](https://carpentries.org/) - The Carpentries is a community of instructors teaching software development and data science skills to researchers. They offer workshops on topics such as version control, programming, and data management.\n[Champions for Change](https://codeforthought.buzzsprout.com/1326658/episodes/16017272-en-champions-for-change-in-research-imperial-college-london-and-cambridge-university) - Code for thought podcast on the Champions for Change initiative at Imperial College London and Cambridge University.",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 6,
+    "fields": {
+      "name": "other_notes.md",
+      "description": "",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        ""
+      ],
+      "active_projects_text": "",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 7,
+    "fields": {
+      "name": "Project Management",
+      "description": "RSEs often need to contribute to multiple projects simultaneously. This can lead to issues with prioritisation, time management, and workload management.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "PLACEHOLDER",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 8,
+    "fields": {
+      "name": "Green RSE",
+      "description": "The environmental impact of RSEs through their work is a growing concern. RSEs need to consider the environmental impact of their work and adopt sustainable practices where possible.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "[UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)",
+      "impacts_text": "",
+      "objectives_text": "Develop a set of best practices for RSEs to reduce their environmental impact.\nEncourage green rse champions within RSE groups to promote sustainable practices.",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['Create a Green RSE SIG', 'An SIG dedicated to the green RSE initiative', '1', '1']])"
+      ],
+      "active_projects_text": "[green algorithms](https://www.green-algorithms.org/)\n[Green SIG slack](https://ukrse.slack.com/archives/C07UXQEE014)",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 9,
+    "fields": {
+      "name": "Equality, Diversity, Inclusivity and Accessibility",
+      "description": "The RSE community faces challenges of inclusivity and diversity. This can be due to a lack of awareness of the role of RSEs, or a lack of opportunities for underrepresented groups to enter the field.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "",
+      "objectives_text": "Understand the scale of the problem of diversity in RSE teams and the community\nUnderstand the scale of the problem of diversity in the RSE community\nIdentify the barriers to entry for underrepresented groups in the RSE community\nMore represetative RSE leaders and role models\nMore inclusive and diverse RSE teams\nMore inclusive and diverse Events and Conferences",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['Create or adapt guidance on inclusive language', 'A shared aggreement of inclusive language in the RSE community', '4,5,6', '1,2,3']])"
+      ],
+      "active_projects_text": "",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 10,
+    "fields": {
+      "name": "Isolation",
+      "description": "RSEs often struggle to get recognition for their work. This can be due to a lack of understanding of the role of RSEs, or a lack of visibility of their contributions. RSEs may also find it difficult to get credit for their work, as they are often not listed as authors on academic papers.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "[ ] Identify methods of reaching out to isolated RSEs to link them with the RSE community.",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "[RSECon](https://rsecon24.society-rse.org/) - RSECon is an opportunity for all RSEs to come together and share their work, learn from each other, and build a community. The conference is open to all RSEs, regardless of their level of experience or background.",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 11,
+    "fields": {
+      "name": "Careers",
+      "description": "RSEs may find it difficult to progress in their careers, as the role of RSE is not always well-defined within academic institutions. This can make it difficult for RSEs to advance to more senior positions or plan for their future career development.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['Share examples of career paths for RSEs', 'Improve availability of career paths to RSEs', 'Increased awareness of career opportunities for RSEs', '1']])"
+      ],
+      "active_projects_text": "[RSE Competencies Toolkit](https://github.com/RSEToolkit/rse-competencies-toolkit/issues) - A project to define the competencies required for RSEs at different levels of experience, and to provide guidance on how to develop these competencies.\n[Step Up]",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 12,
+    "fields": {
+      "name": "Maintaining of Legacy Code",
+      "description": "RSEs often need to work with legacy code, which can be challenging. This can be due to a lack of documentation, a lack of understanding of the codebase, or a lack of support from the original developers. This is particularly challenging when the original developers may have had limited experience in software development.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "[Open source research software project life cycles: understanding project maturity successes, and challenge events](https://talks.cam.ac.uk/talk/index/219982)",
+      "impacts_text": "Identify methods of funding for the ongoing maintainance of legacy code",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        ""
+      ],
+      "active_projects_text": "",
+      "past_work_text": ""
+    }
+  },
+  {
+    "model": "rse_challenges_app.challenge",
+    "pk": 13,
+    "fields": {
+      "name": "Community",
+      "description": "Community is key to the success of the RSE profession. It is important to have a strong community to support each other, share knowledge and best practices, and advocate for the profession. However, building and maintaining a strong community can be challenging. This challenge is about identifying the key issues that the RSE community faces and developing strategies to overcome them.",
+      "created_date": "2024-11-28T21:57:06Z",
+      "last_modified_date": "2024-11-28T21:57:08Z",
+      "is_active": true,
+      "is_deleted": false,
+      "evidence_text": "",
+      "impacts_text": "",
+      "objectives_text": "",
+      "actions_and_outputs_text": [
+        "TableData(['Actions', 'Output', 'Objective', 'Impact'], [['PLACEHOLDER', 'PLACEHOLDER', '1', '1']])"
+      ],
+      "active_projects_text": "",
+      "past_work_text": ""
+    }
+  }
+]
