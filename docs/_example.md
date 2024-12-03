@@ -18,4 +18,3 @@ Add any links to current projects, initiatives, or resources that are currently 
 Add any links to relevant projects, initiatives, or resources that have been developed to address this challenge.
 
 ## Resources
-
