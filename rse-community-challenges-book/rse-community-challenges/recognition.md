@@ -24,8 +24,10 @@ There needs to be recognition of the different kinds of roles that RSEs play in 
 ## Current Active Projects and Initiatives
 
 - [Hidden-ref](https://hidden-ref.org/) - A project to help RSEs get credit for their work by providing a platform for them to showcase their contributions. Status: Active
-- [University of York Fair Attribution Guidance](https://www.york.ac.uk/staff/research/governance/research-policies/fair-attribution-guidance/) - Guidance on when to include an RSE as a co-author on a paper. Status: Live
 
 ## Past work towards overcoming the challenge
 
 ## Resources
+
+- [University of York Fair Attribution Guidance](https://www.york.ac.uk/staff/research/governance/research-policies/fair-attribution-guidance/) - Guidance on when to include an RSE as a co-author on a paper. Status: Live
+- [Credit Contributor Role Taxonomy](https://credit.niso.org/contributor-roles/software/) - A taxonomy of contributor roles for software development. Status: Live
