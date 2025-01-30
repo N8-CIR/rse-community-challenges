@@ -17,3 +17,9 @@ To contribute to this repository, please follow these steps:
 
 - Attend a community call to discuss the challenges and the work being done to overcome them
 - Clone or fork this repository and submit a PR with changes
+
+## Directory Structure
+
+- docs - contains page templates and structure
+- rse-community-challenges-book - The jupyter-book directory containing the book content
+- web-app - A WIP web app to display the challenges and work being done to overcome them
