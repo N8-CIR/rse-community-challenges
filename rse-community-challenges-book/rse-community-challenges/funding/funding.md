@@ -13,6 +13,7 @@ RSEs often struggle to secure funding for their work. This can be due to a lack 
 ### Objectives
 
 1. RSEs are able to secure funding for their work
+2. RSE contribute to funding call decisions and design
 
 ### Actions, Outputs and Objectives
 
