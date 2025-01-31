@@ -4,25 +4,57 @@ The environmental impact of RSEs through their work is a growing concern. RSEs n
 
 ## Evidence of the problem
 
- - [UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)
+- [UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-### Impact Targets
+### Reduce the environmental impact of RSEs through their work
 
-1. Reduce the environmental impact of RSEs through their work.
-2. Raise awareness of the environmental impact of RSEs and the importance of adopting sustainable practices.
+This impact target will be achieved by creating a set of best practices for RSEs to follow in order to reduce their environmental impact. This will be achieved by creating a Green RSE SIG.
 
-### Objectives
+```yaml
+id: 1
+```
 
-1. Develop a set of best practices for RSEs to reduce their environmental impact.
-2. Encourage green rse champions within RSE groups to promote sustainable practices.
+### Raise awareness of the environmental impact of RSEs and the importance of adopting sustainable practices
 
-### Actions, Outputs and Objectives
+```yaml
+id: 2
+```
 
-| Actions                | Output                                       | Objective | Impact |
-| ---------------------- | -------------------------------------------- | --------- | ------ |
-| Create a Green RSE SIG | An SIG dedicated to the green RSE initiative | 1         | 1      |
+## Objectives
+
+### Develop a set of best practices for RSEs to reduce their environmental impact
+
+This objective will be achieved by creating a set of best practices for RSEs to follow in order to reduce their environmental impact. This will be achieved by creating a Green RSE SIG.
+
+```yaml
+id: 1
+Impact targets: [1]
+```
+
+### Encourage green rse champions within RSE groups to promote sustainable practices
+
+```yaml
+id: 2
+Impact targets: [1, 2]
+```
+
+## Actions
+
+### Create a Green RSE SIG
+
+This action will be achieved by creating a Green RSE SIG.
+Some more text
+
+```yaml
+id: 1
+```
+
+#### Outputs
+
+- An SIG dedicated to the green RSE initiative `objectives: [1]`
+- A person to lead the Green RSE SIG `objectives: [1,2]`
 
 ## Current Active Projects and Initiatives
 
