@@ -27,6 +27,7 @@ RSEs may struggle to implement best practices in software development, due to a 
 
 - [The Carpentries](https://carpentries.org/) - The Carpentries is a community of instructors teaching software development and data science skills to researchers. They offer workshops on topics such as version control, programming, and data management.
 - [Champions for Change](https://codeforthought.buzzsprout.com/1326658/episodes/16017272-en-champions-for-change-in-research-imperial-college-london-and-cambridge-university) - Code for thought podcast on the Champions for Change initiative at Imperial College London and Cambridge University.
+- [European Virtual Institute for Research Software Excellence](https://everse.software/) - The EVERSE project aims to create a framework for research software and code excellence, collaboratively designed and championed by the research communities, in pursuit of building a European network of Research Software Quality and setting the foundations of a future Virtual Institute for Research Software Excellence.
 
 ## Past work towards overcoming the challenge
 
