@@ -4,29 +4,64 @@ RSEs may find it difficult to progress in their careers, as the role of RSE is n
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+- [SSI A not-so-brief history of Research Software Engineers](https://www.software.ac.uk/blog/not-so-brief-history-research-software-engineers-0)
 
-### Impact Targets
+## Impact Targets
 
-1. RSEs feel they are in a role that reflects their experience and expertise
-2. RSEs feel they are renumerated fairly for their work
+### RSEs feel they are in a role that reflects their experience and expertise
 
-### Actions, Outputs and Objectives
+This impact target will be achieved by creating roles that match the ambitions and interests of RSEs.
 
-| Actions                                 | Output                                       | Objective                                            | Impact |
-| --------------------------------------- | -------------------------------------------- | ---------------------------------------------------- | ------ |
-| Share examples of career paths for RSEs | Improve availability of career paths to RSEs | Increased awareness of career opportunities for RSEs | 1      |
+```yaml
+id: 1
+```
+
+### RSEs feel they are renumerated fairly for their work
+
+This impact target will be achieved by ensuring that RSEs are paid a competitive salary for their work.
+
+```yaml
+id: 2
+```
+
+## Objectives
+
+### A clear implementation of an RSE career path
+
+This objective will be achieved by evidencing a clear career path from entry level to senior RSE and examples of it being implemented from start to finish.
+
+```yaml
+id: 1
+Impact targets: [1]
+```
+
+## Actions
+
+### Share examples of career paths for RSEs
+
+This action will be achieved by sharing examples of career paths for RSEs.
+
+```yaml
+id: 1
+```
+
+#### Outputs
+
+- Improve availability of career paths to RSEs `objectives: [1]`
+
 
 ## Current Active Projects and Initiatives
 
 - [RSE Competencies Toolkit](https://github.com/RSEToolkit/rse-competencies-toolkit/issues) - A project to define the competencies required for RSEs at different levels of experience, and to provide guidance on how to develop these competencies.
 - [Step Up]
+- [Liverpool RSE career pathway](https://indd.adobe.com/view/26ee34db-2751-461f-941c-ca45f9d96f17)
 
 ## Past work towards overcoming the challenge
 
 ## Resources
 
 - Report: [Research Software Engineers: Creating a Career Path—and a Career](https://zenodo.org/records/10073233)
+- Blog Post: [Identifying the Foundational Competencies of a Research Software Engineer](https://www.software.ac.uk/blog/identifying-foundational-competencies-research-software-engineer)
 
 ## Guidance
 
