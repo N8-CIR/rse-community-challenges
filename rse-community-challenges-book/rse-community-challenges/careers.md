@@ -5,6 +5,8 @@ RSEs may find it difficult to progress in their careers, as the role of RSE is n
 ## Evidence of the problem
 
 - [SSI A not-so-brief history of Research Software Engineers](https://www.software.ac.uk/blog/not-so-brief-history-research-software-engineers-0)
+- [Why it’s so difficult to define an RSE career path CW 24](https://www.software.ac.uk/blog/why-its-so-difficult-define-rse-career-path)
+- [Identifying the Foundational Competencies of a Research Software Engineer](https://www.software.ac.uk/blog/identifying-foundational-competencies-research-software-engineer)
 
 ## Impact Targets
 
@@ -49,12 +51,12 @@ id: 1
 
 - Improve availability of career paths to RSEs `objectives: [1]`
 
-
 ## Current Active Projects and Initiatives
 
 - [RSE Competencies Toolkit](https://github.com/RSEToolkit/rse-competencies-toolkit/issues) - A project to define the competencies required for RSEs at different levels of experience, and to provide guidance on how to develop these competencies.
 - [Step Up]
 - [Liverpool RSE career pathway](https://indd.adobe.com/view/26ee34db-2751-461f-941c-ca45f9d96f17)
+- [The teachingRSE project: "Teaching and Learning Research Software Engineering"](https://github.com/the-teachingRSE-project/competencies)
 
 ## Past work towards overcoming the challenge
 
