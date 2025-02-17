@@ -1,4 +1,7 @@
 # %%
+"""
+An example of visualising a theory of change using a Sankey diagram.
+"""
 
 from matplotlib import pyplot as plt
 import plotly.graph_objects as go
@@ -57,25 +60,25 @@ toc_example = {
 
 # %%
 
-source = [0, 1, 2, 2, 3, 4]
-target = [1, 2, 3, 4, 5, 5]
-value = [2, 2, 1, 1, 1, 1]
+# source = [0, 1, 2, 2, 3, 4]
+# target = [1, 2, 3, 4, 5, 5]
+# value = [2, 2, 1, 1, 1, 1]
 
-link = dict(source=source, target=target, value=value)
-data = go.Sankey(
-    node=dict(
-        pad=15,
-        thickness=20,
-        line=dict(color="black", width=0.5),
-        label=["A1", "A2", "B1", "B2", "C1", "C2"],
-        color=["blue", "red", "red", "blue", "blue", "red"],
-    ),
-    link=link,
-)
+# link = dict(source=source, target=target, value=value)
+# data = go.Sankey(
+#     node=dict(
+#         pad=15,
+#         thickness=20,
+#         line=dict(color="black", width=0.5),
+#         label=["A1", "A2", "B1", "B2", "C1", "C2"],
+#         color=["blue", "red", "red", "blue", "blue", "red"],
+#     ),
+#     link=link,
+# )
 
-fig = go.Figure(data)
+# fig = go.Figure(data)
 
-fig.show()
+# fig.show()
 
 # %%
 
@@ -337,3 +340,5 @@ for edge in G.edges:
     )
 ax.set_axis_off()
 plt.show()
+#
+# %%

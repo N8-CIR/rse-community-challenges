@@ -1,53 +1,26 @@
 # %%
+"""
+This file parses the markdown files into the DJANGO database fixtures.
+
+To get the example fixture from the database run
+`python manage.py dumpdata rse_challenges_app --indent 4 > challenge_b.json`
+
+To push the new fixture to the database run
+`
+
+"""
+
+# %%
+
+import markdown
+import os
+import yaml
 import markdown.blockparser
 import json
-import os
+import re
 import markdown
 from markdown.preprocessors import build_preprocessors
 from markdown.blockprocessors import build_block_parser
-# %%
-
-markdown_example = """# Green RSE
-
-The environmental impact of RSEs through their work is a growing concern. RSEs need to consider the environmental impact of their work and adopt sustainable practices where possible.
-
-## Evidence of the problem
-
- - [UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)
-
-## Objectives and Milestones for overcoming the challenge
-
-### Impact Targets
-
-1. Reduce the environmental impact of RSEs through their work.
-2. Raise awareness of the environmental impact of RSEs and the importance of adopting sustainable practices.
-
-### Objectives
-
-1. Develop a set of best practices for RSEs to reduce their environmental impact.
-2. Encourage green rse champions within RSE groups to promote sustainable practices.
-
-### Actions, Outputs and Objectives
-
-| Actions                | Output                                       | Objective | Impact |
-| ---------------------- | -------------------------------------------- | --------- | ------ |
-| Create a Green RSE SIG | An SIG dedicated to the green RSE initiative | 1         | 1      |
-
-## Current Active Projects and Initiatives
-
-- [green algorithms](https://www.green-algorithms.org/)
-- [Green SIG slack](https://ukrse.slack.com/archives/C07UXQEE014)
-
-## Past work towards overcoming the challenge
-
-## Resources
-
-- [Alan Turing - Community Stakeholder Map](https://cassgvp.kumu.io/alan-turing-institute-environment-and-sustainability)
-- [Website Carbon Calculator](https://www.websitecarbon.com)
-- [green algorithms](https://www.green-algorithms.org/)
-
-
-"""
 
 
 def parse_markdown(markdown_text: str):
@@ -63,193 +36,330 @@ def parse_markdown(markdown_text: str):
     return root
 
 
-result = parse_markdown(markdown_example)
-result
-# %%
-
-first_el = next(result.iter())
-first_el.tag, first_el.text, first_el.tail
-# %%
-[el.text for el in result.iter()]
-
-# %%
-active_heading = None
-page_heading = None
-in_table = False
-table_headings = []
-page_data = {}
-
-
-class TableData:
-    def __init__(self, headings, data):
-        self.headings = headings
-        self.data = data
-
-    def __repr__(self):
-        return f"TableData({self.headings}, {self.data})"
-
-
-for el in result.iter():
-    # print(el.tag, el.text, el.tail)
-    if el.tag == "h1":
-        page_heading = el.text
-        active_heading = "root"
-        page_data[active_heading] = []
-    if el.tag == "h2" or el.tag == "h3":
-        active_heading = el.text
-        page_data[active_heading] = []
-    if el.tag == "p" or el.tag == "li":
-        if not el.text:
-            continue
-        elif el.text[0:2] == "| ":
-            table_lines = el.text.split("\n")
-            table_headings = [
-                heading.strip() for heading in table_lines[0].split("|")[1:-1]
-            ]
-            table_content = [
-                [cell.strip() for cell in row.split("|")[1:-1]]
-                for row in table_lines[2:]
-            ]
-            page_data[active_heading].append(TableData(table_headings, table_content))
-        else:
-            page_data[active_heading].append(el.text)
-
-page_data
-
-# %%
-# Convert this to a Django fixture to import into the database
-
-# example_fixture
-"""
-[
-  {
-    "model": "rse_challenges_app.challenge",
-    "pk": 1,
-    "fields": {
-      "name": "Example Challenge",
-      "description": "The environmental impact of RSEs through their work is a growing concern. RSEs need to consider the environmental impact of their work and adopt sustainable practices where possible.",
-      "created_date": "2024-11-28T21:57:06Z",
-      "last_modified_date": "2024-11-28T21:57:08Z",
-      "is_active": true,
-      "is_deleted": false,
-      "evidence_text": "- [UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)",
-      "impacts_text": "1. Reduce the environmental impact of RSEs through their work.\r\n2. Raise awareness of the environmental impact of RSEs and the importance of adopting sustainable practices.",
-      "objectives_text": "1. Develop a set of best practices for RSEs to reduce their environmental impact.\r\n2. Encourage green rse champions within RSE groups to promote sustainable practices.",
-      "actions_and_outputs_text": "| Actions                | Output                                       | Objective | Impact |\r\n| ---------------------- | -------------------------------------------- | --------- | ------ |\r\n| Create a Green RSE SIG | An SIG dedicated to the green RSE initiative | 1         | 1      |",
-      "active_projects_text": "- [green algorithms](https://www.green-algorithms.org/)\r\n- [Green SIG slack](https://ukrse.slack.com/archives/C07UXQEE014)",
-      "past_work_text": "- [Hello world](http://localhost:8000)"
-    }
-  },
-]
-"""
-
-page_fixture = {
-    "model": "rse_challenges_app.challenge",
-    "pk": 1,
-    "fields": {
-        "name": page_heading,
-        "description": page_data.get("root", ""),
-        "created_date": "2024-11-28T21:57:06Z",
-        "last_modified_date": "2024-11-28T21:57:08Z",
-        "is_active": True,
-        "is_deleted": False,
-        "evidence_text": page_data.get("Evidence of the problem", ""),
-        "impacts_text": page_data.get(
-            "Objectives and Milestones for overcoming the challenge", ""
-        ),
-        "objectives_text": page_data.get("Objectives", ""),
-        "actions_and_outputs_text": page_data.get(
-            "Actions, Outputs and Objectives", ""
-        ),
-        "active_projects_text": page_data.get(
-            "Current Active Projects and Initiatives", ""
-        ),
-        "past_work_text": page_data.get(
-            "Past work towards overcoming the challenge", ""
-        ),
-    },
-}
-page_fixture
-
-# %%
-
-
-def join_lines_with_break(text: list[str]):
-    return ("\n").join(text)
-
-
-def markdown_to_fixture(md: str, id: str):
-    result = parse_markdown(md)
+def parsed_markdown_to_page_data(parsed_markdown):
     active_heading = None
-    page_heading = None
-    table_headings = []
+    active_sub_heading = None
+    active_sub_sub_heading = None
     page_data = {}
 
-    class TableData:
-        def __init__(self, headings, data):
-            self.headings = headings
-            self.data = data
-
-        def __repr__(self):
-            return f"TableData({self.headings}, {self.data})"
-
-    for el in result.iter():
-        # print(el.tag, el.text, el.tail)
+    for el in parsed_markdown.iter():
         if el.tag == "h1":
-            page_heading = el.text
+            # page_heading = el.text
             active_heading = "root"
             page_data[active_heading] = []
-        if el.tag == "h2" or el.tag == "h3":
+        if el.tag == "h2":
             active_heading = el.text
             page_data[active_heading] = []
+            active_sub_heading = None  # Clear as started new section
+            active_sub_sub_heading = None  # Clear as started new section
+        if el.tag == "h3":
+            active_sub_heading = el.text
+            page_data[active_heading] = page_data[active_heading] or {}
+            page_data[active_heading][active_sub_heading] = {
+                "title": active_sub_heading,
+            }
+            active_sub_sub_heading = None  # Clear as started new section
+        if el.tag == "h4":
+            # TODO: Handle nested sub-sub headings
+            active_sub_sub_heading = el.text
+            page_data[active_heading][active_sub_heading][active_sub_sub_heading] = {
+                "content": {}
+            }
         if el.tag == "p" or el.tag == "li":
             if not el.text:
                 continue
-            elif el.text[0:2] == "| ":
-                table_lines = el.text.split("\n")
-                table_headings = [
-                    heading.strip() for heading in table_lines[0].split("|")[1:-1]
-                ]
-                table_content = [
-                    [cell.strip() for cell in row.split("|")[1:-1]]
-                    for row in table_lines[2:]
-                ]
-                page_data[active_heading].append(
-                    TableData(table_headings, table_content)
-                )
+            elif el.text[0:7] == "```yaml":
+                yaml_content = yaml.safe_load(el.text[8:-4])
+                if active_sub_heading and active_sub_sub_heading:
+                    page_data[active_heading][active_sub_heading][
+                        active_sub_sub_heading
+                    ] |= yaml_content
+                elif active_sub_heading:
+                    page_data[active_heading][active_sub_heading] |= yaml_content
+                else:
+                    raise ValueError("YAML block found outside of sub-heading")
             else:
-                page_data[active_heading].append(el.text)
-    page_fixture = {
+                if active_sub_heading and active_sub_sub_heading:
+                    page_data[active_heading][active_sub_heading][
+                        active_sub_sub_heading
+                    ]["content"] = (
+                        page_data[active_heading][active_sub_heading][
+                            active_sub_sub_heading
+                        ]["content"]
+                        or []
+                    )
+                    page_data[active_heading][active_sub_heading][
+                        active_sub_sub_heading
+                    ]["content"].append(el.text)
+                elif active_sub_heading:
+                    page_data[active_heading][active_sub_heading]["content"] = (
+                        page_data[active_heading][active_sub_heading].get(
+                            "content", None
+                        )
+                        or []
+                    )
+                    page_data[active_heading][active_sub_heading]["content"].append(
+                        el.text
+                    )
+                else:
+                    page_data[active_heading].append(el.text)
+    return page_data
+
+
+def get_targets_from_page_data(page_data):
+    targets_data = page_data.get("Impact Targets", [])
+    targets = []
+    for i, target in enumerate(targets_data):
+        target_heading = target.split("\n")[0]
+        target_description = "\n".join(target.split("\n")[1:-1])
+        targets.append({"name": target_heading, "description": target_description})
+    return targets
+
+
+def get_inline_data(s: str):
+    data_elements = re.findall(r"`(.+?)`", s)
+    str_without_data = re.sub(r"`(.+?)`", "", s).strip()
+    data_merged = {
+        k: v for d in [json.loads(s) for s in data_elements] for k, v in d.items()
+    }
+    return str_without_data, data_merged
+
+
+def parse_actions(actions_data: dict):
+    actions = []
+    outputs_all = []
+    output_i = 1  # Start at 1 to match markdown ordered list
+    action_i = 1  # Start at 1 to match markdown ordered list
+    for action_name, action_data in actions_data.items():
+        description = "\n".join(action_data["content"])
+        outputs = action_data.get("Outputs", {}).get("content", [])
+        action = {
+            "id": action_data["id"],
+            "name": action_name,
+            "description": description,
+            "outputs": [i for i in range(output_i, output_i + len(outputs))],
+        }
+        # TODO: Handle duplicate outputs
+        outputs_all += [output.strip() for output in outputs]
+        output_i += len(outputs)
+        action_i += 1
+
+        actions.append(action)
+    outputs_parsed = []
+    for i, output in enumerate(outputs_all):
+        output_search = re.search(r"`objectives: \[(.+?)\]`", output)
+        objectives_yaml = output_search and output_search.group(1).split(",") or []
+        objectives = [int(o) for o in objectives_yaml]
+        title = re.sub(r"`objectives: \[(.+?)\]`", "", output)
+        output_parsed = {
+            "id": i + 1,
+            "name": title,
+            "objectives": objectives,
+        }
+        outputs_parsed.append(output_parsed)
+    return actions, outputs_parsed
+
+
+def parse_objectives(objectives_data: dict):
+    objectives = []
+    objective_i = 1  # Start at 1 to match markdown ordered list
+    for objective_name, objective_data in objectives_data.items():
+        # print(objective_data)
+        description = "\n".join(
+            [o for o in objective_data if "**Impact targets**" not in o]
+        )
+        impacts = objective_data.get("Impact targets", [])
+        objective = {
+            "id": objective_i,
+            "name": objective_name,
+            "description": description,
+            "impacts": impacts,
+        }
+        objective_i += 1
+
+        objectives.append(objective)
+    return objectives
+
+
+def get_toc_data(page_data: dict, heading: str, actions, outputs, objectives):
+    toc_parsed = {
+        "name": heading,
+        "description": page_data["root"],
+        "evidence": [
+            {"id": i + 1, "name": get_inline_data(item)[0], **get_inline_data(item)[1]}
+            for i, item in enumerate(page_data.get("Evidence of the problem", []))
+        ],
+        "inputs": [
+            {"id": i + 1, "name": get_inline_data(item)[0], **get_inline_data(item)[1]}
+            for i, item in enumerate(page_data.get("Prerequisites", []))
+        ],
+        "actions": actions,
+        "outputs": outputs,
+        "objectives": objectives,
+        "impacts": [
+            {"id": i + 1, "name": get_inline_data(item)[0], **get_inline_data(item)[1]}
+            for i, item in enumerate(page_data.get("Impact Targets", []))
+        ],
+    }  #
+    return toc_parsed
+
+
+# %%
+
+# Index counters ensure that we create unique indexes for each object type
+# but can still reference them in challenge object
+index_counters = {
+    "challenge": 1,
+    "actions": 1,
+    "inputs": 1,
+    "objective": 1,
+    "outputs": 1,
+    "impacts": 1,
+    "evidences": 1,
+    "resources": 1,
+}
+
+
+def markdown_to_fixture(markdown_text: str, name: str, pk: int) -> list[dict]:
+    result = parse_markdown(markdown_text)
+    page_data = parsed_markdown_to_page_data(result)
+    targets = get_targets_from_page_data(page_data)
+    actions, outputs = parse_actions(page_data.get("Actions"))
+    objectives = parse_objectives(page_data.get("Objectives"))
+    evidences = page_data.get("Evidence of the problem", [])
+
+    impacts_ids = [
+        i
+        for i in range(
+            index_counters["impacts"], index_counters["impacts"] + len(targets)
+        )
+    ]
+    index_counters["impacts"] += len(targets)
+    actions_ids = [
+        i
+        for i in range(
+            index_counters["actions"], index_counters["actions"] + len(actions)
+        )
+    ]
+    index_counters["actions"] += len(actions)
+    outputs_ids = [
+        i
+        for i in range(
+            index_counters["outputs"], index_counters["outputs"] + len(outputs)
+        )
+    ]
+    index_counters["outputs"] += len(outputs)
+    objectives_ids = [
+        i
+        for i in range(
+            index_counters["objective"], index_counters["objective"] + len(objectives)
+        )
+    ]
+    index_counters["objective"] += len(objectives)
+    evidences_ids = [
+        i
+        for i in range(
+            index_counters["evidences"], index_counters["evidences"] + len(evidences)
+        )
+    ]
+    index_counters["evidences"] += len(evidences)
+
+    impacts_fixtures = [
+        {
+            "model": "rse_challenges_app.impact",
+            "pk": i,
+            "fields": {
+                "name": target.get("name", ""),
+                "description": target.get("description", ""),
+                "evidences": [],  # TODO: Implement evidences
+            },
+        }
+        for i, target in zip(impacts_ids, targets)
+    ]
+    actions_fixtures = [
+        {
+            "model": "rse_challenges_app.action",
+            "pk": i,
+            "fields": {
+                "name": action["name"],
+                "description": action.get("description", ""),
+                "outputs": action["outputs"],
+                "status": "TODO",
+            },
+        }
+        for i, action in zip(actions_ids, actions)
+    ]
+    outputs_fixtures = [
+        {
+            "model": "rse_challenges_app.output",
+            "pk": i,
+            "fields": {
+                "name": output["name"],
+                "description": output.get("description", ""),
+                "objectives": output["objectives"],
+            },
+        }
+        for i, output in zip(outputs_ids, outputs)
+    ]
+    objectives_fixtures = [
+        {
+            "model": "rse_challenges_app.objective",
+            "pk": i,
+            "fields": {
+                "name": objective["name"],
+                "description": objective.get("description", ""),
+                "impacts": objective["impacts"],
+            },
+        }
+        for i, objective in zip(objectives_ids, objectives)
+    ]
+    evidences_fixtures = [
+        {
+            "model": "rse_challenges_app.evidence",
+            "pk": i,
+            "fields": {
+                "name": f"Evidence {i}",
+                "description": evidence,
+            },
+        }
+        for i, evidence in zip(evidences_ids, evidences)
+    ]
+
+    challenge_fixture = {
         "model": "rse_challenges_app.challenge",
-        "pk": 1,
+        "pk": pk,
         "fields": {
-            "name": page_heading or id,
-            "description": join_lines_with_break(page_data.get("root", [""])),
+            # Change this to match new challenge shape and other object types
+            "name": name,
+            "description": page_data.get("root", ""),
             "created_date": "2024-11-28T21:57:06Z",
             "last_modified_date": "2024-11-28T21:57:08Z",
             "is_active": True,
             "is_deleted": False,
-            "evidence_text": join_lines_with_break(
-                page_data.get("Evidence of the problem", [""])
-            ),
-            "impacts_text": join_lines_with_break(
-                page_data.get(
-                    "Objectives and Milestones for overcoming the challenge", [""]
-                )
-            ),
-            "objectives_text": join_lines_with_break(page_data.get("Objectives", [""])),
-            "actions_and_outputs_text": page_data.get(
-                "Actions, Outputs and Objectives", [""]
-            ),
-            "active_projects_text": join_lines_with_break(
-                page_data.get("Current Active Projects and Initiatives", [""])
-            ),
-            "past_work_text": join_lines_with_break(
-                page_data.get("Past work towards overcoming the challenge", [""])
-            ),
+            "inputs": [],
+            "actions": actions_ids,
+            "outputs": outputs_ids,
+            "objectives": objectives_ids,
+            "impacts": impacts_ids,
+            "evidences": evidences_ids,
+            "resources": [],
+            # "active_projects_text": join_lines_with_break(
+            #     page_data.get("Current Active Projects and Initiatives", [""])
+            # ),
+            # "past_work_text": join_lines_with_break(
+            #     page_data.get("Past work towards overcoming the challenge", [""])
+            # ),
         },
     }
-    return page_fixture
+    fixtures = [
+        *impacts_fixtures,
+        *actions_fixtures,
+        *outputs_fixtures,
+        *objectives_fixtures,
+        *evidences_fixtures,
+        challenge_fixture,
+    ]
+    return fixtures
 
 
 # Apply to
@@ -260,9 +370,17 @@ markdown_files = [
 ]
 page_fixtures = []
 for i, file in enumerate(markdown_files):
+    # if file != "green-rse.md":
+    #     continue
     with open(f"rse-community-challenges-book/rse-community-challenges/{file}") as f:
         markdown_text = f.read()
-        page_fixtures.append({**markdown_to_fixture(markdown_text, file), "pk": i + 1})
+        try:
+            page_fixtures += [*markdown_to_fixture(markdown_text, file, i + 1)]
+        except Exception as e:
+            print(f"Error parsing {file}: {e}")
+            # print(e)
+            # raise e
+
 with open("web-app/rse_challenges_app/fixtures/challenges.json", "w") as f:
     json.dump(page_fixtures, f, indent=2, default=str)
 
