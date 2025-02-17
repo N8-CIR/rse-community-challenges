@@ -6,4 +6,15 @@ The RSE Challenges web app is an interactive web based interface to the RSE Chal
 
 ## Development
 
+### Environment Setup (First time)
+
+- Setup python virtual environment with UV
+- Install dependencies with `uv sync --group=dev`
+- Run database migrations with `python manage.py migrate`
+- Add initial data with `python manage.py loaddata web-app/rse_challenges_app/fixtures/challenges.json`
+
+### Running Development Server
+
+`python manage.py runserver`
+
 ### Testing
