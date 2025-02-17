@@ -1,11 +1,22 @@
 # %%
 """
+# Parse Challenge Markdown Pages
+
 This file parses the markdown files into the DJANGO database fixtures.
+
+# Setup
 
 To get the example fixture from the database run
 `python manage.py dumpdata rse_challenges_app --indent 4 > challenge_b.json`
 
 To push the new fixture to the database run
+
+`python manage.py loaddata rse_challenges_app/fixtures/challenges.json`
+
+## Indexing
+
+Note that indexing is a bit fidly as we need to keep track of the global index for each object type.
+
 `
 
 """
@@ -21,6 +32,11 @@ import re
 import markdown
 from markdown.preprocessors import build_preprocessors
 from markdown.blockprocessors import build_block_parser
+
+# We need to keep track of global Id so each item has a unique ID
+OUTPUTS_ID = 0
+OBJECTIVES_ID = 0
+IMPACTS_ID = 0
 
 
 def parse_markdown(markdown_text: str):
@@ -113,6 +129,8 @@ def get_targets_from_page_data(page_data):
         target_heading = target.split("\n")[0]
         target_description = "\n".join(target.split("\n")[1:-1])
         targets.append({"name": target_heading, "description": target_description})
+        global IMPACTS_ID
+        IMPACTS_ID += 1
     return targets
 
 
@@ -137,7 +155,7 @@ def parse_actions(actions_data: dict):
             "id": action_data["id"],
             "name": action_name,
             "description": description,
-            "outputs": [i for i in range(output_i, output_i + len(outputs))],
+            "outputs": [OUTPUTS_ID + i for i in range(output_i, output_i + len(outputs))],
         }
         # TODO: Handle duplicate outputs
         outputs_all += [output.strip() for output in outputs]
@@ -147,15 +165,19 @@ def parse_actions(actions_data: dict):
         actions.append(action)
     outputs_parsed = []
     for i, output in enumerate(outputs_all):
+        global OUTPUTS_ID
         output_search = re.search(r"`objectives: \[(.+?)\]`", output)
         objectives_yaml = output_search and output_search.group(1).split(",") or []
-        objectives = [int(o) for o in objectives_yaml]
+        objectives = [OBJECTIVES_ID + int(o) for o in objectives_yaml]
         title = re.sub(r"`objectives: \[(.+?)\]`", "", output)
         output_parsed = {
-            "id": i + 1,
+            # "id": i + 1,
+            "id": OUTPUTS_ID,
             "name": title,
             "objectives": objectives,
         }
+        OUTPUTS_ID += 1
+
         outputs_parsed.append(output_parsed)
     return actions, outputs_parsed
 
@@ -173,11 +195,13 @@ def parse_objectives(objectives_data: dict):
             "id": objective_i,
             "name": objective_name,
             "description": description,
-            "impacts": impacts,
+            "impacts": [IMPACTS_ID + int(i) for i in impacts],
         }
         objective_i += 1
 
         objectives.append(objective)
+        global OBJECTIVES_ID
+        OBJECTIVES_ID += 1
     return objectives
 
 
@@ -223,9 +247,10 @@ index_counters = {
 def markdown_to_fixture(markdown_text: str, name: str, pk: int) -> list[dict]:
     result = parse_markdown(markdown_text)
     page_data = parsed_markdown_to_page_data(result)
-    targets = get_targets_from_page_data(page_data)
+    # NOTE: Order of these is currently important so as to match ids
     actions, outputs = parse_actions(page_data.get("Actions"))
     objectives = parse_objectives(page_data.get("Objectives"))
+    targets = get_targets_from_page_data(page_data)
     evidences = page_data.get("Evidence of the problem", [])
 
     impacts_ids = [
@@ -324,6 +349,7 @@ def markdown_to_fixture(markdown_text: str, name: str, pk: int) -> list[dict]:
         }
         for i, evidence in zip(evidences_ids, evidences)
     ]
+    description_text = "\n".join(page_data.get("root", []))
 
     challenge_fixture = {
         "model": "rse_challenges_app.challenge",
@@ -331,7 +357,7 @@ def markdown_to_fixture(markdown_text: str, name: str, pk: int) -> list[dict]:
         "fields": {
             # Change this to match new challenge shape and other object types
             "name": name,
-            "description": page_data.get("root", ""),
+            "description": description_text,
             "created_date": "2024-11-28T21:57:06Z",
             "last_modified_date": "2024-11-28T21:57:08Z",
             "is_active": True,
@@ -363,11 +389,11 @@ def markdown_to_fixture(markdown_text: str, name: str, pk: int) -> list[dict]:
 
 
 # Apply to
-markdown_files = [
+markdown_files = reversed(sorted([
     f
     for f in os.listdir("rse-community-challenges-book/rse-community-challenges")
     if ".md" in f
-]
+]))
 page_fixtures = []
 for i, file in enumerate(markdown_files):
     # if file != "green-rse.md":
@@ -376,6 +402,7 @@ for i, file in enumerate(markdown_files):
         markdown_text = f.read()
         try:
             page_fixtures += [*markdown_to_fixture(markdown_text, file, i + 1)]
+            print(f"Successfully parsed {file}")
         except Exception as e:
             print(f"Error parsing {file}: {e}")
             # print(e)

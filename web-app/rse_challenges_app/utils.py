@@ -227,22 +227,46 @@ def create_toc_graph(challenge: Challenge):
         *[color_map["impacts"] for _ in impacts],
     ]
     target_indexes = [
-        *[nodes_id_map[f"actions_{v.id}"] for d in inputs for v in d.actions.all()],
-        *[nodes_id_map[f"outputs_{v.id}"] for d in actions for v in d.outputs.all()],
         *[
-            nodes_id_map[f"objectives_{v.id}"]
+            nodes_id_map.get(f"actions_{v.id}", f"MISSING actions_{v.id}")
+            for d in inputs
+            for v in d.actions.all()
+        ],
+        *[
+            nodes_id_map.get(f"outputs_{v.id}", f"MISSING outputs_{v.id}")
+            for d in actions
+            for v in d.outputs.all()
+        ],
+        *[
+            nodes_id_map.get(f"objectives_{v.id}", f"MISSING objectives_{v.id}")
             for d in outputs
             for v in d.objectives.all()
         ],
-        *[nodes_id_map[f"impacts_{v.id}"] for d in objectives for v in d.impacts.all()],
+        *[
+            nodes_id_map.get(f"impacts_{v.id}", f"MISSING impacts_{v.id}")
+            for d in objectives
+            for v in d.impacts.all()
+        ],
     ]
 
     source_indexes = [
-        *[nodes_id_map[f"inputs_{d.id}"] for d in inputs for v in d.actions.all()],
-        *[nodes_id_map[f"actions_{d.id}"] for d in actions for v in d.outputs.all()],
-        *[nodes_id_map[f"outputs_{d.id}"] for d in outputs for v in d.objectives.all()],
         *[
-            nodes_id_map[f"objectives_{d.id}"]
+            nodes_id_map.get(f"inputs_{d.id}", f"MISSING inputs_{d.id}")
+            for d in inputs
+            for v in d.actions.all()
+        ],
+        *[
+            nodes_id_map.get(f"actions_{d.id}", f"MISSING actions_{d.id}")
+            for d in actions
+            for v in d.outputs.all()
+        ],
+        *[
+            nodes_id_map.get(f"outputs_{d.id}", f"MISSING outputs_{d.id}")
+            for d in outputs
+            for v in d.objectives.all()
+        ],
+        *[
+            nodes_id_map.get(f"objectives_{d.id}", f"MISSING objectives_{d.id}")
             for d in objectives
             for v in d.impacts.all()
         ],
@@ -312,7 +336,8 @@ def plot_toc_graph(
 
 def get_toc_plot_html(challenge: Challenge):
     fig, ax = plt.subplots(figsize=(20, 5))
-    plot_toc_graph(*create_toc_graph(challenge), ax=ax, fig=fig)  # type: ignore
+    toc_graph = create_toc_graph(challenge)
+    plot_toc_graph(*toc_graph, ax=ax, fig=fig)  # type: ignore
     imgdata = StringIO()
     fig.savefig(imgdata, format="svg")
     imgdata.seek(0)
@@ -322,6 +347,20 @@ def get_toc_plot_html(challenge: Challenge):
 
 
 def create_challenge_context(challenge: Challenge):
+    actions_text = "\n".join(
+        [
+            f"## {e.name}\n {e.description}\n\n**Outputs**: \n\n"
+            + "\n".join([f" - {o.name}" for o in e.outputs.all()])
+            for e in challenge.actions.all()
+        ]
+    )
+    objectives_text = "\n".join(
+        [
+            f"## {e.name}\n {e.description}\n\n**Impact**: \n\n"
+            + "\n".join([f" - {o.name}" for o in e.impacts.all()])
+            for e in challenge.objectives.all()
+        ]
+    )
     return {
         **challenge.__dict__,
         "likes": 999,
@@ -337,12 +376,8 @@ def create_challenge_context(challenge: Challenge):
         "impacts_text": "\n".join(
             markdown.markdown(e.name) for e in challenge.impacts.all()
         ),
-        "objectives_text": "\n".join(
-            markdown.markdown(e.name) for e in challenge.objectives.all()
-        ),
-        "actions_and_outputs_text": "\n".join(
-            markdown.markdown(e.name) for e in challenge.actions.all()
-        ),
+        "objectives_text": markdown.markdown(objectives_text),
+        "actions_and_outputs_text": markdown.markdown(actions_text),
         "toc": get_toc_plot_html(challenge),
         # "active_projects_text": markdown.markdown(challenge.active_projects_text),
         # "past_work_text": markdown.markdown(challenge.past_work_text),

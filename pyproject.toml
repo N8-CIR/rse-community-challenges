@@ -24,6 +24,10 @@ toc_viz = [
   "matplotlib",
 ]
 
+interactive = [
+  "jupyter",
+]
+
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "rse_challenges_site.settings"
 
