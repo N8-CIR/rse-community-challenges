@@ -1,6 +1,48 @@
 from django.db import models
 
 
+class Resource(models.Model):
+    name = models.CharField(max_length=200)
+    url = models.URLField()
+    description = models.TextField()
+
+
+class Evidence(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+
+
+class Impact(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    evidences = models.ManyToManyField(Evidence)
+
+
+class Objective(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    impacts = models.ManyToManyField(Impact)
+
+
+class Output(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    objectives = models.ManyToManyField(Objective)
+
+
+class Action(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    outputs = models.ManyToManyField(Output)
+    status = models.CharField(max_length=200)
+
+
+class Input(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    actions = models.ManyToManyField(Action)
+
+
 class Challenge(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -8,16 +50,10 @@ class Challenge(models.Model):
     last_modified_date = models.DateTimeField("Date Last Modified")
     is_active = models.BooleanField(default=True)
     is_deleted = models.BooleanField(default=False)
-    evidence_text = models.TextField()
-    impacts_text = models.TextField()
-    objectives_text = models.TextField()
-    actions_and_outputs_text = models.TextField()
-    active_projects_text = models.TextField()
-    past_work_text = models.TextField()
-
-
-class Resource(models.Model):
-    challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    url = models.URLField()
-    description = models.TextField()
+    inputs = models.ManyToManyField(Input)
+    actions = models.ManyToManyField(Action)
+    outputs = models.ManyToManyField(Output)
+    objectives = models.ManyToManyField(Objective)
+    impacts = models.ManyToManyField(Impact)
+    evidences = models.ManyToManyField(Evidence)
+    resources = models.ManyToManyField(Resource)

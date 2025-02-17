@@ -1,0 +1,37 @@
+[project]
+name = "community-challenges-web-app"
+version = "0.0.1"
+description = "Community Challenges Web App"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Sam Bland", email = "sbland.co.uk@gmail.com" },
+]
+dependencies = [
+  "django",
+  "whitenoise",
+  "markdown",
+  "libsass",
+  "django-compressor",
+  "django-sass-processor",
+  "matplotlib>=3.10.0",
+  "pyyaml>=6.0.2",
+  "networkx>=3.4.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+    "pytest-mock",
+    "pytest-xdist>=3.6.1",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "rse_challenges_site.settings"
+
+[tool.ruff]
+exclude = ["rse_challenges_app/migrations"]

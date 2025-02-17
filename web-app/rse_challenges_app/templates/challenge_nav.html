@@ -72,6 +72,15 @@
                 Actions and Outputs
               </button>
             </li>
+            <li>
+              <button
+                class="dropdown-item {% if nav == 'toc' %}active{% endif %}"
+                hx-get="{% url 'challenge_component' challenge.id 'toc' %}"
+                hx-target="#challenge_content_outer"
+              >
+                Diagram
+              </button>
+            </li>
           </ul>
         </li>
         <li class="nav-item dropdown">

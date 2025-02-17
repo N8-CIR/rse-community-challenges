@@ -38,6 +38,7 @@ def challenge_component_view(
         "active_projects": "challenge/challenge_active_projects.html",
         "past_work": "challenge/challenge_past_work.html",
         "resources": "challenge/challenge_resources.html",
+        "toc": "challenge/challenge_toc.html",
     }
     template = component_templates.get(component_key, "404.html")
     return render(request=request, template_name=template, context=context)
