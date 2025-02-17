@@ -29,6 +29,8 @@ The RSE community faces challenges of inclusivity and diversity. This can be due
 
 ## Current Active Projects and Initiatives
 
+- https://www.hpcwire.com/off-the-wire/women-in-hpc-and-alces-flight-release-final-report-on-move-the-needle-project/
+
 ## Past work towards overcoming the challenge
 
 ## Resources
