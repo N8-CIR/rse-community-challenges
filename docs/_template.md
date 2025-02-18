@@ -2,19 +2,11 @@
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-### Impact Targets
+## Objectives
 
-1. PLACEHOLDER
-
-### Objectives
-
-### Actions, Outputs and Objectives
-
-| Actions     | Output      | Objective | Impact |
-| ----------- | ----------- | --------- | ------ |
-| Set up a SIG | SIG on this topic | 1         | 1      |
+## Actions
 
 ## Current Active Projects and Initiatives
 

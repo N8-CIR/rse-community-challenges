@@ -4,17 +4,11 @@ RSEs may find it difficult to attract new talent to the field, as the role of RS
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-1. PLACEHOLDER
+## Objectives
 
-### Objectives
-
-### Actions, Outputs and Objectives
-
-| Actions     | Output      | Objective | Impact |
-| ----------- | ----------- | --------- | ------ |
-| PLACEHOLDER | PLACEHOLDER | 1         | 1      |
+## Actions
 
 ## Past work towards overcoming the challenge
 

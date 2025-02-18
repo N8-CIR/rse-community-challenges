@@ -4,17 +4,48 @@ The challenge is to provide a brief overview of the challenge, including its sco
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-- [ ] Objective 1
-- [ ] Objective 2
+### Impact Target 1
+
+Achieve greatness by doing something amazing.
+
+```yaml
+id: 1
+```
+
+## Objectives
+
+### Develop a set of best practices for RSEs to do stuff
+
+This objective will create a set of best practices for RSEs to follow in order to do stuff.
+
+```yaml
+id: 1
+Impact targets: [1]
+```
+
+## Actions
+
+### Create a special interest group (SIG)
+
+This action will be achieved by creating a SIG.
+
+```yaml
+id: 1
+```
+
+#### Outputs
+
+- An SIG will be created `objectives: [1]`
+- A person to lead the SIG `objectives: [1,2]`
 
 ## Current Active Projects and Initiatives
 
-Add any links to current projects, initiatives, or resources that are currently being developed to address this challenge.
+- [project example](https://www.society-rse.org/)
 
 ## Past work towards overcoming the challenge
 
-Add any links to relevant projects, initiatives, or resources that have been developed to address this challenge.
-
 ## Resources
+
+- [resource example](https://www.society-rse.org/)

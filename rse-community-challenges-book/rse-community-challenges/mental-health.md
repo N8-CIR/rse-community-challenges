@@ -6,17 +6,49 @@ RSEs may experience high levels of stress and anxiety due to the demands of thei
 
 - [Talking about mental health at RSECon22](https://www.software.ac.uk/blog/talking-about-mental-health-rsecon22)
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-1. PLACEHOLDER
+### RSEs have limited stress and anxiety levels during and outside of work
 
-### Objectives
+This impact will ensure that RSEs have limited stress and anxiety levels during and outside of work. This will lead to improved mental health and well-being.
 
-### Actions, Outputs and Objectives
+```yaml
+id: 1
+```
 
-| Actions     | Output      | Objective | Impact |
-| ----------- | ----------- | --------- | ------ |
-| PLACEHOLDER | PLACEHOLDER | 1         | 1      |
+## Objectives
+
+### Understand the scale of the problem of mental health in the RSE community
+
+This objective will result in a better understanding of the scale of the problem of mental health in the RSE community.
+
+```yaml
+id: 1
+Impact targets: [1]
+```
+
+### RSEs have a community to turn to to support them through mental health challenges
+
+This objective will result in RSEs having a community to turn to for support when they are experiencing mental health challenges.
+
+```yaml
+id: 2
+Impact targets: [1]
+```
+
+## Actions
+
+### Establish a mental health support network for RSEs
+
+Identify and establish a mental health support network for RSEs, where they can seek help and support when needed.
+
+```yaml
+id: 1
+```
+
+#### Outputs
+
+- A mental health support network for RSEs `objectives: [2]`
 
 ## Current Active Projects and Initiatives
 

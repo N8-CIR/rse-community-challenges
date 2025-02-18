@@ -29,6 +29,7 @@ import yaml
 import markdown.blockparser
 import json
 import re
+from pprint import pprint
 import markdown
 from markdown.preprocessors import build_preprocessors
 from markdown.blockprocessors import build_block_parser
@@ -65,7 +66,7 @@ def parsed_markdown_to_page_data(parsed_markdown):
             page_data[active_heading] = []
         if el.tag == "h2":
             active_heading = el.text
-            page_data[active_heading] = []
+            page_data[active_heading] = None # This is set below now
             active_sub_heading = None  # Clear as started new section
             active_sub_sub_heading = None  # Clear as started new section
         if el.tag == "h3":
@@ -118,12 +119,13 @@ def parsed_markdown_to_page_data(parsed_markdown):
                         el.text
                     )
                 else:
+                    page_data[active_heading] = page_data[active_heading] or []
                     page_data[active_heading].append(el.text)
     return page_data
 
 
 def get_targets_from_page_data(page_data):
-    targets_data = page_data.get("Impact Targets", [])
+    targets_data = page_data.get("Impact Targets", []) or []
     targets = []
     for i, target in enumerate(targets_data):
         target_heading = target.split("\n")[0]
@@ -186,9 +188,8 @@ def parse_objectives(objectives_data: dict):
     objectives = []
     objective_i = 1  # Start at 1 to match markdown ordered list
     for objective_name, objective_data in objectives_data.items():
-        # print(objective_data)
         description = "\n".join(
-            [o for o in objective_data if "**Impact targets**" not in o]
+            [o for o in objective_data.get('content', []) if "**Impact targets**" not in o]
         )
         impacts = objective_data.get("Impact targets", [])
         objective = {
@@ -248,10 +249,10 @@ def markdown_to_fixture(markdown_text: str, name: str, pk: int) -> list[dict]:
     result = parse_markdown(markdown_text)
     page_data = parsed_markdown_to_page_data(result)
     # NOTE: Order of these is currently important so as to match ids
-    actions, outputs = parse_actions(page_data.get("Actions"))
-    objectives = parse_objectives(page_data.get("Objectives"))
+    actions, outputs = parse_actions(page_data.get("Actions", {}) or {})
+    objectives = parse_objectives(page_data.get("Objectives", {}) or {})
     targets = get_targets_from_page_data(page_data)
-    evidences = page_data.get("Evidence of the problem", [])
+    evidences = page_data.get("Evidence of the problem", []) or []
 
     impacts_ids = [
         i
@@ -405,8 +406,8 @@ for i, file in enumerate(markdown_files):
             print(f"Successfully parsed {file}")
         except Exception as e:
             print(f"Error parsing {file}: {e}")
-            # print(e)
-            # raise e
+            print(e)
+            raise e
 
 with open("web-app/rse_challenges_app/fixtures/challenges.json", "w") as f:
     json.dump(page_fixtures, f, indent=2, default=str)

@@ -9,17 +9,24 @@ There needs to be recognition of the different kinds of roles that RSEs play in 
 - [from-backstage-to-spotlight-a-call-to-highlight-the-critical-role-of-research-software](https://blogs.lse.ac.uk/impactofsocialsciences/2023/09/07/from-backstage-to-spotlight-a-call-to-highlight-the-critical-role-of-research-software/)
 - [Research technology professionals: the hidden roles behind research success](https://www.ses.ac.uk/research-technology-professionals-the-hidden-roles-behind-research-success/)
 
-## Objectives and Milestones for overcoming the challenge
 
-1. Non standard research outputs inc. software produced by RSEs to be recognised as academic output.
+## Impact Targets
 
-### Objectives
+### RSEs are recognised as key contributors to research
 
-### Actions, Outputs and Objectives
+RSEs are recognised as key contributors to research. This will ensure that their work is valued and rewarded accordingly.
 
-| Actions     | Output      | Objective | Impact |
-| ----------- | ----------- | --------- | ------ |
-| PLACEHOLDER | PLACEHOLDER | 1         | 1      |
+```yaml
+id: 1
+```
+
+## Objectives
+
+### Non standard research outputs inc. software produced by RSEs to be recognised as academic output.
+
+
+## Actions
+
 
 ## Current Active Projects and Initiatives
 

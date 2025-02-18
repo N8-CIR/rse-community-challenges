@@ -4,24 +4,66 @@ RSEs may struggle to implement best practices in software development, due to a 
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-### Impact Targets
+### Research software is of a high quality, maintainable, and scalable
 
-1. Research software is of high quality, maintainable, and scalable
-2. Research software results are reproducible or replicable
+Research software is of a high quality, maintainable, and scalable. This will ensure that it achieves long term societal impact.
 
-### Objectives
+```yaml
+id: 1
+```
 
-1. Understand the scale of the problem of best practices in research software development
-2. RSEs have the skills, knowledge and resources to implement best practices in research software development
-3. Best practice is shared and adopted across the RSE community
+### Research software results are reproducible or replicable
 
-### Actions, Outputs and Objectives
+Research software results are reproducible or replicable. This will ensure that research findings can be trusted and built upon.
 
-| Actions                                                        | Output                                                               | Objective | Impact |
-| -------------------------------------------------------------- | -------------------------------------------------------------------- | --------- | ------ |
-| Establish RSE champions in key areas of software best practice | RSEs with the skills, knowleddge and resources to lead the community | 3         | 1,2    |
+```yaml
+id: 2
+```
+
+## Objectives
+
+### Understand the scale of the problem of best practices in research software development
+
+This objective will result in a better understanding of the scale of the problem of best practices in research software development.
+
+```yaml
+id: 1
+Impact targets: [1,2]
+```
+
+### RSEs have the skills, knowledge and resources to implement best practices in research software development
+
+This objective will result in RSEs having the skills, knowledge and resources to implement best practices in research software development.
+
+```yaml
+id: 1
+Impact targets: [1,2]
+```
+
+### Best practice is shared and adopted across the RSE community
+
+This objective will result in best practice being shared and adopted across the RSE community.
+
+```yaml
+id: 1
+Impact targets: [1,2]
+```
+
+## Actions
+
+### Establish RSE champions in key areas of software best practice
+
+Identify RSE champions in key areas of software best practice, who can lead the community in adopting best practices.
+
+```yaml
+id: 1
+```
+
+#### Outputs
+
+- RSEs with the skills, knowleddge and resources to lead the community `objectives: [1,2]`
 
 ## Current Active Projects and Initiatives
 

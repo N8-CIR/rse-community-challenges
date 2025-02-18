@@ -4,17 +4,11 @@ RSEs often need to contribute to multiple projects simultaneously. This can lead
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-1. PLACEHOLDER
+## Objectives
 
-### Objectives
-
-### Actions, Outputs and Objectives
-
-| Actions     | Output      | Objective | Impact |
-| ----------- | ----------- | --------- | ------ |
-| PLACEHOLDER | PLACEHOLDER | 1         | 1      |
+## Actions
 
 ## Current Active Projects and Initiatives
 
@@ -22,4 +16,6 @@ RSEs often need to contribute to multiple projects simultaneously. This can lead
 
 ## Resources
 
-## Additional Comments
+## Guidance
+
+## Sub Problems

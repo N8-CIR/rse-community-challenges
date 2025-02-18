@@ -4,20 +4,39 @@ RSEs may struggle to identify the most appropriate training opportunities for th
 
 ## Evidence of the problem
 
-## Objectives and Milestones for overcoming the challenge
+## Impact Targets
 
-1. PLACEHOLDER
+### RSEs have the skills and knowledge required for their role
 
-### Objectives
+This impact will ensure that RSEs have the skills and knowledge required for their role. This will lead to improved job satisfaction and performance.
 
-1. Identify the baseline skills required for RSEs at different levels of experience
-2. Identify the most appropriate training opportunities for RSEs at different levels of experience
+```yaml
+id: 1
+```
 
-### Actions, Outputs and Objectives
+## Objectives
 
-| Actions     | Output      | Objective | Impact |
-| ----------- | ----------- | --------- | ------ |
-| PLACEHOLDER | PLACEHOLDER | 1         | 1      |
+### Identify the baseline skills required for RSEs at different levels of experience
+
+Identify the baseline skills required for RSEs at different levels of experience. This will help to define the competencies required for RSEs at different levels of experience.
+
+```yaml
+id: 1
+Impact targets: [1]
+```
+
+### Identify the most appropriate training opportunities for RSEs at different levels of experience
+
+Identify the most appropriate training opportunities for RSEs at different levels of experience. This will help RSEs to develop the skills and knowledge required for their role.
+
+```yaml
+id: 1
+Impact targets: [1]
+```
+
+
+## Actions
+
 
 ## Current Active Projects and Initiatives
 
