@@ -5,8 +5,9 @@ on:
   push:
     branches:
     - main
-    # paths:
-    # - rse-community-challenges-book/**
+    paths:
+    - rse-community-challenges-book/**
+    - .github/workflows/publish-to-gh-pages.yaml
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
