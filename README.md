@@ -4,6 +4,8 @@ A community repository of challenges faced by RSEs and the steps to tackling the
 
 This repo contains a jupyter-book within the `rse-community-challenges-book` directory.
 
+This book is published to [RSE Community Challenges](https://n8-cir.github.io/rse-community-challenges/index.html#)
+
 ## The aim of this repository
 
 The aim of this repository is to provide a collaborative space for the RSE community to document the challenges faced by RSEs and the work being done to overcome them. The repository is open to contributions from anyone.
