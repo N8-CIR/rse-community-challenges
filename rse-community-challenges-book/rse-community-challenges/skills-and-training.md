@@ -1,8 +1,10 @@
-# Training
+# Skills and Training
 
 RSEs may struggle to identify the most appropriate training opportunities for their role. This links to the ambiguity of the RSE role and the lack of a clear career path. This can also result in issues of skills shortages.
 
 ## Evidence of the problem
+
+- [Goldacre](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067053/goldacre-review-using-health-data-for-research-and-analysis.pdf)
 
 ## Impact Targets
 
@@ -34,9 +36,7 @@ id: 1
 Impact targets: [1]
 ```
 
-
 ## Actions
-
 
 ## Current Active Projects and Initiatives
 
