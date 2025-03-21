@@ -31,10 +31,18 @@
     }
   },
   {
+    "model": "rse_challenges_app.evidence",
+    "pk": 1,
+    "fields": {
+      "name": "Evidence 1",
+      "description": "[Goldacre](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067053/goldacre-review-using-health-data-for-research-and-analysis.pdf)"
+    }
+  },
+  {
     "model": "rse_challenges_app.challenge",
     "pk": 1,
     "fields": {
-      "name": "training.md",
+      "name": "skills-and-training.md",
       "description": "RSEs may struggle to identify the most appropriate training opportunities for their role. This links to the ambiguity of the RSE role and the lack of a clear career path. This can also result in issues of skills shortages.",
       "created_date": "2024-11-28T21:57:06Z",
       "last_modified_date": "2024-11-28T21:57:08Z",
@@ -50,7 +58,9 @@
       "impacts": [
         1
       ],
-      "evidences": [],
+      "evidences": [
+        1
+      ],
       "resources": []
     }
   },
@@ -93,17 +103,17 @@
   },
   {
     "model": "rse_challenges_app.evidence",
-    "pk": 1,
+    "pk": 2,
     "fields": {
-      "name": "Evidence 1",
+      "name": "Evidence 2",
       "description": "[from-backstage-to-spotlight-a-call-to-highlight-the-critical-role-of-research-software](https://blogs.lse.ac.uk/impactofsocialsciences/2023/09/07/from-backstage-to-spotlight-a-call-to-highlight-the-critical-role-of-research-software/)"
     }
   },
   {
     "model": "rse_challenges_app.evidence",
-    "pk": 2,
+    "pk": 3,
     "fields": {
-      "name": "Evidence 2",
+      "name": "Evidence 3",
       "description": "[Research technology professionals: the hidden roles behind research success](https://www.ses.ac.uk/research-technology-professionals-the-hidden-roles-behind-research-success/)"
     }
   },
@@ -127,8 +137,8 @@
         2
       ],
       "evidences": [
-        1,
-        2
+        2,
+        3
       ],
       "resources": []
     }
@@ -227,9 +237,9 @@
   },
   {
     "model": "rse_challenges_app.evidence",
-    "pk": 3,
+    "pk": 4,
     "fields": {
-      "name": "Evidence 3",
+      "name": "Evidence 4",
       "description": "[Talking about mental health at RSECon22](https://www.software.ac.uk/blog/talking-about-mental-health-rsecon22)"
     }
   },
@@ -258,16 +268,16 @@
         3
       ],
       "evidences": [
-        3
+        4
       ],
       "resources": []
     }
   },
   {
     "model": "rse_challenges_app.evidence",
-    "pk": 4,
+    "pk": 5,
     "fields": {
-      "name": "Evidence 4",
+      "name": "Evidence 5",
       "description": "[Open source research software project life cycles: understanding project maturity successes, and challenge events](https://talks.cam.ac.uk/talk/index/219982)"
     }
   },
@@ -287,7 +297,7 @@
       "objectives": [],
       "impacts": [],
       "evidences": [
-        4
+        5
       ],
       "resources": []
     }
@@ -324,6 +334,18 @@
     }
   },
   {
+    "model": "rse_challenges_app.action",
+    "pk": 3,
+    "fields": {
+      "name": "Life cycle assessment",
+      "description": "We will develop a life cycle assessment tool for RSEs to use to assess the environmental impact of their work.",
+      "outputs": [
+        4
+      ],
+      "status": "TODO"
+    }
+  },
+  {
     "model": "rse_challenges_app.output",
     "pk": 2,
     "fields": {
@@ -343,6 +365,17 @@
       "objectives": [
         6,
         7
+      ]
+    }
+  },
+  {
+    "model": "rse_challenges_app.output",
+    "pk": 4,
+    "fields": {
+      "name": "A tool that calculates the life cycle impact of your work ",
+      "description": "",
+      "objectives": [
+        8
       ]
     }
   },
@@ -370,10 +403,21 @@
     }
   },
   {
-    "model": "rse_challenges_app.evidence",
-    "pk": 5,
+    "model": "rse_challenges_app.objective",
+    "pk": 8,
     "fields": {
-      "name": "Evidence 5",
+      "name": "Improve transparency of RSE impact on the environment",
+      "description": "",
+      "impacts": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "rse_challenges_app.evidence",
+    "pk": 6,
+    "fields": {
+      "name": "Evidence 6",
       "description": "[UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)"
     }
   },
@@ -389,22 +433,25 @@
       "is_deleted": false,
       "inputs": [],
       "actions": [
-        2
-      ],
-      "outputs": [
         2,
         3
       ],
+      "outputs": [
+        2,
+        3,
+        4
+      ],
       "objectives": [
         6,
-        7
+        7,
+        8
       ],
       "impacts": [
         4,
         5
       ],
       "evidences": [
-        5
+        6
       ],
       "resources": []
     }
@@ -438,30 +485,30 @@
   },
   {
     "model": "rse_challenges_app.action",
-    "pk": 3,
+    "pk": 4,
     "fields": {
       "name": "Create or adapt guidance on inclusive language",
       "description": "Create or adapt guidance on inclusive language",
       "outputs": [
-        4
+        5
       ],
       "status": "TODO"
     }
   },
   {
     "model": "rse_challenges_app.output",
-    "pk": 4,
+    "pk": 5,
     "fields": {
       "name": "A shared agreement of inclusive language in the RSE community ",
       "description": "",
       "objectives": [
-        12
+        13
       ]
     }
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 8,
+    "pk": 9,
     "fields": {
       "name": "Understand the scale of the problem of diversity in RSE teams and the community",
       "description": "This objective will begin to understand the scale of the problem of diversity in RSE teams and the community.\nIt will help to support further work into this area.",
@@ -470,7 +517,7 @@
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 9,
+    "pk": 10,
     "fields": {
       "name": "Identify the barriers to entry for underrepresented groups in the RSE community",
       "description": "This objective will identify the barriers to entry for underrepresented groups in the RSE community.",
@@ -479,7 +526,7 @@
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 10,
+    "pk": 11,
     "fields": {
       "name": "More representative RSE leaders and role models",
       "description": "This objective will ensure that the RSE community has more representative leaders and role models.\nThis will lead to increased diversity and inclusivity in the RSE community.",
@@ -488,7 +535,7 @@
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 11,
+    "pk": 12,
     "fields": {
       "name": "More inclusive and diverse RSE teams",
       "description": "This objective will ensure that RSE teams are more inclusive and diverse.",
@@ -497,7 +544,7 @@
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 12,
+    "pk": 13,
     "fields": {
       "name": "More inclusive and diverse Events and Conferences",
       "description": "This objective will ensure that events and conferences are more inclusive and diverse.",
@@ -516,17 +563,17 @@
       "is_deleted": false,
       "inputs": [],
       "actions": [
-        3
-      ],
-      "outputs": [
         4
       ],
+      "outputs": [
+        5
+      ],
       "objectives": [
-        8,
         9,
         10,
         11,
-        12
+        12,
+        13
       ],
       "impacts": [
         6,
@@ -548,30 +595,30 @@
   },
   {
     "model": "rse_challenges_app.action",
-    "pk": 4,
+    "pk": 5,
     "fields": {
       "name": "Document the existing RSE communities",
       "description": "This action will result in a comprehensive list of the existing RSE communities and their activities.",
       "outputs": [
-        5
+        6
       ],
       "status": "TODO"
     }
   },
   {
     "model": "rse_challenges_app.output",
-    "pk": 5,
+    "pk": 6,
     "fields": {
       "name": "A list of the existing RSE communities hosted on the RSE Soc website ",
       "description": "",
       "objectives": [
-        13
+        14
       ]
     }
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 13,
+    "pk": 14,
     "fields": {
       "name": "Identify the existing RSE communities",
       "description": "This objective will result in a better understanding of the existing RSE communities and how they can be leveraged to support the RSE profession.",
@@ -592,13 +639,13 @@
       "is_deleted": false,
       "inputs": [],
       "actions": [
-        4
-      ],
-      "outputs": [
         5
       ],
+      "outputs": [
+        6
+      ],
       "objectives": [
-        13
+        14
       ],
       "impacts": [
         9
@@ -627,30 +674,30 @@
   },
   {
     "model": "rse_challenges_app.action",
-    "pk": 5,
+    "pk": 6,
     "fields": {
       "name": "Share examples of career paths for RSEs",
       "description": "This action will be achieved by sharing examples of career paths for RSEs.",
       "outputs": [
-        6
+        7
       ],
       "status": "TODO"
     }
   },
   {
     "model": "rse_challenges_app.output",
-    "pk": 6,
+    "pk": 7,
     "fields": {
       "name": "Improve availability of career paths to RSEs ",
       "description": "",
       "objectives": [
-        14
+        15
       ]
     }
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 14,
+    "pk": 15,
     "fields": {
       "name": "A clear implementation of an RSE career path",
       "description": "This objective will be achieved by evidencing a clear career path from entry level to senior RSE and examples of it being implemented from start to finish.",
@@ -661,18 +708,10 @@
   },
   {
     "model": "rse_challenges_app.evidence",
-    "pk": 6,
-    "fields": {
-      "name": "Evidence 6",
-      "description": "[SSI A not-so-brief history of Research Software Engineers](https://www.software.ac.uk/blog/not-so-brief-history-research-software-engineers-0)"
-    }
-  },
-  {
-    "model": "rse_challenges_app.evidence",
     "pk": 7,
     "fields": {
       "name": "Evidence 7",
-      "description": "[Why it\u2019s so difficult to define an RSE career path CW 24](https://www.software.ac.uk/blog/why-its-so-difficult-define-rse-career-path)"
+      "description": "[SSI A not-so-brief history of Research Software Engineers](https://www.software.ac.uk/blog/not-so-brief-history-research-software-engineers-0)"
     }
   },
   {
@@ -680,6 +719,14 @@
     "pk": 8,
     "fields": {
       "name": "Evidence 8",
+      "description": "[Why it\u2019s so difficult to define an RSE career path CW 24](https://www.software.ac.uk/blog/why-its-so-difficult-define-rse-career-path)"
+    }
+  },
+  {
+    "model": "rse_challenges_app.evidence",
+    "pk": 9,
+    "fields": {
+      "name": "Evidence 9",
       "description": "[Identifying the Foundational Competencies of a Research Software Engineer](https://www.software.ac.uk/blog/identifying-foundational-competencies-research-software-engineer)"
     }
   },
@@ -695,22 +742,22 @@
       "is_deleted": false,
       "inputs": [],
       "actions": [
-        5
-      ],
-      "outputs": [
         6
       ],
+      "outputs": [
+        7
+      ],
       "objectives": [
-        14
+        15
       ],
       "impacts": [
         10,
         11
       ],
       "evidences": [
-        6,
         7,
-        8
+        8,
+        9
       ],
       "resources": []
     }
@@ -735,31 +782,31 @@
   },
   {
     "model": "rse_challenges_app.action",
-    "pk": 6,
+    "pk": 7,
     "fields": {
       "name": "Establish RSE champions in key areas of software best practice",
       "description": "Identify RSE champions in key areas of software best practice, who can lead the community in adopting best practices.",
       "outputs": [
-        7
+        8
       ],
       "status": "TODO"
     }
   },
   {
     "model": "rse_challenges_app.output",
-    "pk": 7,
+    "pk": 8,
     "fields": {
       "name": "RSEs with the skills, knowleddge and resources to lead the community ",
       "description": "",
       "objectives": [
-        15,
-        16
+        16,
+        17
       ]
     }
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 15,
+    "pk": 16,
     "fields": {
       "name": "Understand the scale of the problem of best practices in research software development",
       "description": "This objective will result in a better understanding of the scale of the problem of best practices in research software development.",
@@ -771,7 +818,7 @@
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 16,
+    "pk": 17,
     "fields": {
       "name": "RSEs have the skills, knowledge and resources to implement best practices in research software development",
       "description": "This objective will result in RSEs having the skills, knowledge and resources to implement best practices in research software development.",
@@ -783,7 +830,7 @@
   },
   {
     "model": "rse_challenges_app.objective",
-    "pk": 17,
+    "pk": 18,
     "fields": {
       "name": "Best practice is shared and adopted across the RSE community",
       "description": "This objective will result in best practice being shared and adopted across the RSE community.",
@@ -805,15 +852,15 @@
       "is_deleted": false,
       "inputs": [],
       "actions": [
-        6
-      ],
-      "outputs": [
         7
       ],
+      "outputs": [
+        8
+      ],
       "objectives": [
-        15,
         16,
-        17
+        17,
+        18
       ],
       "impacts": [
         12,

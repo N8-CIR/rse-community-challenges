@@ -40,6 +40,13 @@ id: 2
 Impact targets: [1, 2]
 ```
 
+### Improve transparency of RSE impact on the environment
+
+```yaml
+id: 3
+Impact targets: [2]
+```
+
 ## Actions
 
 ### Create a Green RSE SIG
@@ -55,6 +62,18 @@ id: 1
 
 - An SIG dedicated to the green RSE initiative `objectives: [1]`
 - A person to lead the Green RSE SIG `objectives: [1,2]`
+
+### Life cycle assessment
+
+We will develop a life cycle assessment tool for RSEs to use to assess the environmental impact of their work.
+
+```yaml
+id: 2
+```
+
+#### Outputs
+
+- A tool that calculates the life cycle impact of your work `objectives: [3]`
 
 ## Current Active Projects and Initiatives
 
