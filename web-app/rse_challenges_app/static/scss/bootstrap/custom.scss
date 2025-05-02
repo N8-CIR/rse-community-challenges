@@ -2,7 +2,7 @@
 @import "functions";
 @import "variables";
 
-$primary: rgb(124, 139, 27); // set the $primary variable
+$primary: rgb(194, 94, 0); // set the $primary variable
 
 // merge with existing $theme-colors map
 $theme-colors: map-merge($theme-colors, (
@@ -25,3 +25,39 @@ html {
 }
 // set changes
 @import "bootstrap";
+
+
+.tod_item {
+  border-left: 2px solid $primary;
+  border-bottom: 2px solid $primary;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+  h3 {
+    color: $primary;
+  }
+  h4 {
+    border-bottom: 1px solid $primary;
+  }
+}
+
+.tod_item_sub_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tod_item_sub_section_item {
+  border-left: 2px solid $primary;
+  border-radius: 5px;
+  padding: 1rem;
+  width: calc(50% - 1rem);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}

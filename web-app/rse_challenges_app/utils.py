@@ -3,15 +3,13 @@ import matplotlib.pyplot as plt
 from io import StringIO
 import yaml
 import networkx as nx
-import markdown.blockparser
 import json
 import re
 import markdown
 from markdown.preprocessors import build_preprocessors
 from markdown.blockprocessors import build_block_parser
 import matplotlib.patches as mpatches
-
-from .models import Challenge
+from .models import Challenge, Action, Objective
 
 
 def parse_markdown(markdown_text: str):
@@ -311,10 +309,10 @@ def plot_toc_graph(
             wrap=True,
             verticalalignment="top",
         )
-        txt._get_wrap_line_width = (
+        txt._get_wrap_line_width = (  # type: ignore
             lambda: ((node_width * 2) - text_padding * 2) * fig.dpi
         )  # type: ignore
-        txt.set_clip_path(rect)
+        txt.set_clip_path(rect) # type: ignore
 
     for edge in G.edges:
         ax.plot(
@@ -345,6 +343,57 @@ def get_toc_plot_html(challenge: Challenge):
     data = imgdata.getvalue()
     return data
 
+
+def expand_actions_data(actions_data: Action):
+    return {
+        "id": actions_data.id,  # type: ignore
+        "name": actions_data.name,
+        "description": actions_data.description,
+        "outputs": [
+            {
+                "name": o.name,
+                "description": o.description,
+                "objectives": o.objectives.all(),
+            }
+            for o in actions_data.outputs.all()
+        ],
+        "objectives": list(set([ob for o in actions_data.outputs.all() for ob in o.objectives.all()])),
+    }
+
+
+def expand_objective_data(objective_data: Objective):
+    outputs = objective_data.output_set.all() # type: ignore
+    actions_a = [
+        [o.action_set.all(), o] for o in outputs
+    ]
+    actions_all = [
+        {"id": b.id, "name": b.name, "description": b.description, "outputs": [o]}
+        for a,o in actions_a for b in a
+    ]
+    actions_unique_id = set([a["id"] for a in actions_all])
+    actions = []
+    for action_id in actions_unique_id:
+        action = next(
+            (a for a in actions_all if a["id"] == action_id), None
+        )
+        if action:
+            actions.append(action)
+
+
+    return {
+        "id": objective_data.id, # type: ignore
+        "name": objective_data.name,
+        "description": objective_data.description,
+        "impacts": [
+            {
+                "name": i.name,
+                "description": i.description,
+                # "evidence": i.evidence.all(),
+            }
+            for i in objective_data.impacts.all()
+        ],
+        "actions": actions
+    }
 
 def create_challenge_context(challenge: Challenge):
     actions_text = "\n".join(
@@ -377,7 +426,9 @@ def create_challenge_context(challenge: Challenge):
             markdown.markdown(e.name) for e in challenge.impacts.all()
         ),
         "objectives_text": markdown.markdown(objectives_text),
+        "objectives_data": [expand_objective_data(e) for e in challenge.objectives.all()],
         "actions_and_outputs_text": markdown.markdown(actions_text),
+        "actions_data": [expand_actions_data(e) for e in challenge.actions.all()],
         "toc": get_toc_plot_html(challenge),
         # "active_projects_text": markdown.markdown(challenge.active_projects_text),
         # "past_work_text": markdown.markdown(challenge.past_work_text),

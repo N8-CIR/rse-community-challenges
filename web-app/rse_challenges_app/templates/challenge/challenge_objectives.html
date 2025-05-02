@@ -3,6 +3,38 @@
 {% block challengecontent %}
 
 <h2>Objectives</h2>
-<p>{{challenge.objectives_text|safe}}</p>
+
+
+<!-- Iterate over actions in challenge.actions_data -->
+{% for objective in challenge.objectives_data %}
+<div class="tod_item row container">
+  <div class="row">
+    <h3>{{ objective.name }}</h3>
+    <p>{{ objective.description|safe }}</p>
+  </div>
+  {% if objective.actions %}
+    <!-- Action outputs -->
+    <div class="tod_item_sub_section row">
+      <h4>Actions</h4>
+      {% for action in objective.actions %}
+        <div class="tod_item_sub_section_item">
+          <h5>{{ action.name }}</h5>
+          <p>{{ action.description|safe }}</p>
+          <!-- Objectives Linked to output -->
+          {% if action.outputs %}
+            <h6>Linked Outputs</h6>
+            <ul>
+              {% for output in action.outputs %}
+                <li>{{ output.name }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+{% endfor %}
+
 
 {% endblock challengecontent %}
