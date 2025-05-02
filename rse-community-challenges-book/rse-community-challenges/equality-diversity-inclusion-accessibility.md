@@ -103,3 +103,4 @@ id: 1
 ## Resources
 
 - [RSE Soc Resources-EDIA](https://society-rse.org/resources/?catslug=edia-rd)
+- [EDIA-resources-for-RTPs](https://docs.google.com/document/d/1MG9TKsuTMBFq1aPcPsP8NMiJu480rvyc03LGIqJX5Xk/edit?usp=sharing)
