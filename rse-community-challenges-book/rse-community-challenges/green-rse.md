@@ -79,6 +79,7 @@ id: 2
 
 - [green algorithms](https://www.green-algorithms.org/)
 - [Green SIG slack](https://ukrse.slack.com/archives/C07UXQEE014)
+- [Green RSE SIG](https://socrse.github.io/green-sig/)
 
 ## Past work towards overcoming the challenge
 
