@@ -74,4 +74,9 @@ id: 1
 
 ## Past work towards overcoming the challenge
 
+- [Introducing the FAIR Principles for research software](https://www.nature.com/articles/s41597-022-01710-x)
+A paper introducing the FAIR principles for research software.
+
 ## Resources
+
+- [FAIR principles for research data](https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair/)
