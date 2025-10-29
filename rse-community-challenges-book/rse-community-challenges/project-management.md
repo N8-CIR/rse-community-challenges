@@ -22,6 +22,8 @@ id: 1
 
 ## Current Active Projects and Initiatives
 
+- [DRIFT-WP2: A Curriculum for Managing Research Software Projects](https://docs.google.com/document/d/1p2O3ZRbZa73XixChkgxkgZSqp_i81hicshLHphGrzok)
+
 ## Past work towards overcoming the challenge
 
 ## Resources
