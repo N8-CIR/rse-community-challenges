@@ -12,10 +12,10 @@ chapters:
   - file: rse-community-challenges/funding/funding-output-maintainance
 - file: rse-community-challenges/green-rse
 - file: rse-community-challenges/equality-diversity-inclusion-accessibility
-- file: rse-community-challenges/isolation
 - file: rse-community-challenges/maintaining-legacy-code
 - file: rse-community-challenges/mental-health
 - file: rse-community-challenges/project-management
 - file: rse-community-challenges/recognition
 - file: rse-community-challenges/recruitment-to-rse
-- file: rse-community-challenges/training
+- file: rse-community-challenges/rse-and-ai
+- file: rse-community-challenges/skills-and-training
