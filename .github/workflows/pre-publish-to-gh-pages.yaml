@@ -1,13 +1,15 @@
-name: deploy-book
+name: pre-deploy-book
+# Runs some checks before deploying the book
 
 # Run this when the master or main branch changes
 on:
-  push:
+  pull_request:
     branches:
     - main
     paths:
     - rse-community-challenges-book/**
     - .github/workflows/publish-to-gh-pages.yaml
+
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
@@ -51,8 +53,3 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: "rse-community-challenges-book/_build/html"
-
-    # Deploy the book's HTML to GitHub Pages
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
