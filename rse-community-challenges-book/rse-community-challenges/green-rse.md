@@ -1,22 +1,30 @@
 # Green RSE
 
-The environmental impact of RSEs through their work is a growing concern. RSEs need to consider the environmental impact of their work and adopt sustainable practices where possible.
+The environmental impact of RSEs through their work is a growing concern. RSEs
+need to consider the environmental impact of their work and adopt sustainable
+practices where possible.
 
 ## Evidence of the problem
 
 - [UK Gov Office for Science: Large-scale computing: the case for greater UK coordination](https://assets.publishing.service.gov.uk/media/654a4025e2e16a000d42aaef/UK_Computing_report_-_Final_20.09.21.pdf)
+- [Software Sustainability Institute: Green skills and training for digital researchers](https://www.software.ac.uk/blog/green-skills-and-training-digital-researchers)
 
 ## Impact Targets
 
 ### Reduce the environmental impact of RSEs through their work
 
-This impact target will be achieved by creating a set of best practices for RSEs to follow in order to reduce their environmental impact. This will be achieved by creating a Green RSE SIG.
+This impact target will be achieved by creating a set of best practices for RSEs
+to follow in order to reduce their environmental impact. This will be achieved by
+creating a Green RSE SIG.
 
 ```yaml
 id: 1
 ```
 
-### Raise awareness of the environmental impact of RSEs and the importance of adopting sustainable practices
+### Raise awareness of the environmental impact of RSEs
+
+Raise awareness of the environmental impact of RSEs and the importance of adopting
+sustainable practices
 
 ```yaml
 id: 2
@@ -26,7 +34,9 @@ id: 2
 
 ### Develop a set of best practices for RSEs to reduce their environmental impact
 
-This objective will be achieved by creating a set of best practices for RSEs to follow in order to reduce their environmental impact. This will be achieved by creating a Green RSE SIG.
+This objective will be achieved by creating a set of best practices for RSEs to
+follow in order to reduce their environmental impact. This will be achieved by
+creating a Green RSE SIG.
 
 ```yaml
 id: 1
@@ -65,7 +75,8 @@ id: 1
 
 ### Life cycle assessment
 
-We will develop a life cycle assessment tool for RSEs to use to assess the environmental impact of their work.
+We will develop a life cycle assessment tool for RSEs to use to assess the
+environmental impact of their work.
 
 ```yaml
 id: 2
