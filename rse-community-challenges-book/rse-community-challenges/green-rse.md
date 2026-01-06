@@ -57,6 +57,13 @@ id: 3
 Impact targets: [2]
 ```
 
+### Adequate training and resources for RSEs to adopt sustainable practices
+
+```yaml
+id: 4
+Impact targets: [1, 2]
+```
+
 ## Actions
 
 ### Create a Green RSE SIG
@@ -85,6 +92,20 @@ id: 2
 #### Outputs
 
 - A tool that calculates the life cycle impact of your work `objectives: [3]`
+
+### Create training materials and resources for RSEs to adopt sustainable practices
+
+We will create training materials and resources for RSEs to adopt sustainable
+practices.
+
+```yaml
+id: 3
+```
+
+#### Outputs
+
+- Training materials and resources for RSEs to adopt sustainable practices
+  `objectives: [4]`
 
 ## Current Active Projects and Initiatives
 
