@@ -69,12 +69,24 @@ Create mental health posters that provide practical solutions to common mental
 health challenges faced by RSEs.
 
 ```yaml
-id: 1
+id: 2
 ```
 
 #### Outputs
 
 - A set of mental health posters that can be distributed to RSE teams `objectives: [3]`
+
+### Mental Health First Aid Course
+
+Create and share a course on mental health first aid for RSEs.
+
+```yaml
+id: 3
+```
+
+#### Outputs
+
+- A course on mental health first aid `objectives: [3]`
 
 ## Current Active Projects and Initiatives
 
