@@ -10,6 +10,7 @@ chapters:
 - file: rse-community-challenges/funding/funding
   sections:
   - file: rse-community-challenges/funding/funding-output-maintainance
+- file: rse-community-challenges/rse-and-ai
 - file: rse-community-challenges/green-rse
 - file: rse-community-challenges/equality-diversity-inclusion-accessibility
 - file: rse-community-challenges/isolation
