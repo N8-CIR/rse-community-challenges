@@ -18,6 +18,15 @@ and knowledge to effectively work with AI technologies.
 id: 1
 ```
 
+### RSEs are able to respond to the use of AI by researchers
+
+AI is increasingly used to produce research software. RSEs need to be ready to respond
+to the benefits and challenges associated with this.
+
+```yaml
+id: 1
+```
+
 ## Objectives
 
 ### Key AI skills and knowledge for RSEs identified and documented
