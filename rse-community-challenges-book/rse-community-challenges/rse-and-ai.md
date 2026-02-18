@@ -58,11 +58,36 @@ status: not-started
 - A report summarising the survey results `objectives: [1]`
 - A list of key AI skills and knowledge for RSEs `objectives: [1]`
 
+### Map RSE competencies against AI capability
+
+This action will involve mapping key RSE competencies against current and future
+GenAI capabilities. This will help us understand where GenAI could impact competency
+requirements and how training will need to respond.
+
+```yaml
+id: 2
+status: not-started
+```
+
+#### Outputs
+
+- A mapping of key RSE competencies against AI capability `objectives: [1]`
+
 ## Current Active Projects and Initiatives
 
 - [Direct Framework](https://directframework.com/)
   A project to define the competencies required for RSEs at different levels of
   experience, and to provide guidance on how to develop these competencies.
+- [EMMC ASBL - Impact of Generative AI on Software Development, Application and Licensing Models](https://docs.google.com/forms/d/e/1FAIpQLSczvzY1qPYdBz5P73bDikKjRe3k7m35A8RCxfFDne_Jd96Btw/viewform)
+  A survey on investigating the usage of Generative AI in the domain of Research
+  Software Engineering
+- [Research Software Engineering in the Age of Generative AI: Building a Community Vision](https://www.researchsoft.org/events/rse-ai-workshop/)
+  Research Software Engineering in the Age of Generative AI: Building a Community
+  Vision is a 2.5-day workshop that will bring together ~30 leaders in research
+  software and AI to agree on a shared vision and co-develop a roadmap for how
+  research software will be produced in the age of Generative AI – independent of
+  today’s specific roles or job titles. A small number of funders will also be
+  present as observers.
 
 ## Past work towards overcoming the challenge
 
